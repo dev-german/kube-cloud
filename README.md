@@ -188,6 +188,11 @@ kubectl apply -f ms-medicos-deployment.yaml
 kubectl get service ms-medicos-service
 ```
 
+```bash
+kubectl get all
+```
+![9 getall-gcp](https://github.com/user-attachments/assets/b7b2ecf3-086c-4031-9709-106561ff1b1b)
+
 ### 9. Pruebas Mediante Postman
 
 1. Espera a que ambos servicios tengan una `EXTERNAL-IP`.
@@ -198,5 +203,34 @@ kubectl get service ms-medicos-service
 http://<EXTERNAL_IP_MS_CITAS>/tu-ruta-api/citas
 http://<EXTERNAL_IP_MS_MEDICOS>/tu-ruta-api/medicos
 ```
+
+1. Crear usuario
+
+![1 registra-usuario](https://github.com/user-attachments/assets/3db0a71c-84cb-40c2-aa4e-2e04b0bbf202)
+![2 resultado-usuario](https://github.com/user-attachments/assets/5e899964-48b7-4ed4-a834-ab3ca801a5a0)
+
+2. Crear medico
+   
+![3 registra-medico](https://github.com/user-attachments/assets/bc5557c5-9491-442c-924e-a19fd71a7f89)
+![4 resultado-medico](https://github.com/user-attachments/assets/56aab328-60ee-4487-a0f6-0d73fb78ccdd)
+
+3. Crear cita
+   
+![5 registro-cita](https://github.com/user-attachments/assets/bf240479-f5ca-454d-aa99-ffe8cac80596)
+![6 resultado-cita](https://github.com/user-attachments/assets/2dc4ba13-1236-4dd3-a3a8-93cfdb50f159)
+
+4. Ver Cita
+   
+![7 obtener-cita](https://github.com/user-attachments/assets/459258e9-f2d3-4fab-99da-c4b88658e93d)
+![8 resultado-cita](https://github.com/user-attachments/assets/37ea81fb-546e-49ca-a412-35a21e56f1f4)
+
+
+
+
+
+
+
+
+
 
 
