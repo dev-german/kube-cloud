@@ -200,8 +200,9 @@ kubectl get all
 3. Realiza pruebas sobre:
 
 ```
-http://<EXTERNAL_IP_MS_CITAS>/tu-ruta-api/citas
-http://<EXTERNAL_IP_MS_MEDICOS>/tu-ruta-api/medicos
+http://<EXTERNAL_IP_MS_CITAS>/usuario
+http://<EXTERNAL_IP_MS_CITAS>/citas
+http://<EXTERNAL_IP_MS_MEDICOS>/medico
 ```
 
 1. Crear usuario
