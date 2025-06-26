@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms-citas-service
+spec:
+  selector:
+    app: ms-citas
+  ports:
+    - protocol: TCP
+      port: 9091
+      targetPort: 9091
+      nodePort: 30991
+  type: NodePort

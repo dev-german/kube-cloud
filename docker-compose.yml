@@ -1,0 +1,30 @@
+services:
+  ms-medicos:
+    image: ms-medicos:1.0
+    container_name: ms-medicos
+    ports:
+      - "9092:9092"
+    environment:
+      USER_DEMO: Netec
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:9092/medico"]
+      interval: 30s
+      timeout: 15s
+      retries: 5
+      start_period: 30s
+  ms-citas:
+    image: ms-citas:1.0
+    container_name: ms-citas
+    ports:
+      - "9091:9091"
+    environment:
+      MS_MEDICOS_URL: http://ms-medicos:9092
+    depends_on:
+      ms-medicos:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:9091/cita"]
+      interval: 30s
+      timeout: 15s
+      retries: 5
+      start_period: 30s

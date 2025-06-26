@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-citas
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-citas
+  template:
+    metadata:
+      labels:
+        app: ms-citas
+    spec:
+      containers:
+        - name: ms-citas
+          image: jean1988/ms-citas:1.0
+          ports:
+            - containerPort: 9091
+          envFrom:
+            - configMapRef:
+                name: ms-citas-config
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: 9091
+            initialDelaySeconds: 10
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: 9091
+            initialDelaySeconds: 15
+            periodSeconds: 10

@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ms-citas-config
+data:
+  APP_NAME: ms-citas
+  SERVER_PORT: "9091"
+  SPRING_PROFILES_ACTIVE: dev
+  MS_MEDICOS_URL: http://ms-medicos-service:9092
